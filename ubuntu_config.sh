@@ -1,6 +1,6 @@
 #!/bin/bash
 
- declare -a arr=("git" "atom")
+ declare -a arr=("git" "atom" "curl")
  for name in "${arr[@]}"
  do
     dpkg -s $name &> /dev/null
@@ -38,8 +38,9 @@
 
      then
          echo "$name - installing"
-         sudo apt-get update
-         sudo apt-get install awscli -y
+         curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+         unzip awscliv2.zip
+         sudo ./aws/install
      else
          echo "$name - already installed"
  fi
