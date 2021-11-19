@@ -1,6 +1,8 @@
 #!/bin/bash
 
- declare -a arr=("git" "atom" "curl")
+ sudo apt-get update
+
+ declare -a arr=("git" "atom" "curl" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks")
  for name in "${arr[@]}"
  do
     dpkg -s $name &> /dev/null
@@ -9,7 +11,6 @@
 
         then
             echo "$name - installing"
-            sudo apt-get update
             sudo apt-get install -y $name
 
         else
@@ -25,7 +26,6 @@
      then
          echo "$name - installing"
          wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-         sudo apt-get update
          sudo apt install -y ./google-chrome-stable_current_amd64.deb
      else
          echo "$name - already installed"
