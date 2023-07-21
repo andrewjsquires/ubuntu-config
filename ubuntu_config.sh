@@ -2,7 +2,7 @@
 
  sudo apt-get update
 
- declare -a arr=("git" "atom" "curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks")
+ declare -a arr=("git" "atom" "curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks", "zsh")
  for name in "${arr[@]}"
  do
     dpkg -s $name &> /dev/null
@@ -30,6 +30,9 @@
      else
          echo "$name - already installed"
  fi
+
+#get ohmyzsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
  # name="aws"
  # dpkg -s $name  &> /dev/null
