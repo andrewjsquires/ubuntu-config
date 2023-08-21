@@ -2,7 +2,7 @@
 
  sudo apt-get update
 
- declare -a arr=("git" "atom" "curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks", "zsh")
+ declare -a arr=("atom" "curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks", "zsh")
  for name in "${arr[@]}"
  do
     dpkg -s $name &> /dev/null
