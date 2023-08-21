@@ -4,35 +4,33 @@ Configuration for basic apps such as git, atom, aws cli
 # Prerequisites
 ### Setup VM
 Install iso from https://ubuntu.com/download/desktop
-In VirtualBox Manager, click New. 'In Unattended Guest OS Install Setup', change username and password. 
-get 
+In VirtualBox Manager, click New. 
+
+'In Unattended Guest OS Install Setup', change username and password. 
+ 
 Change the following
 - Base Memory ~ 11000 MB
 - Processeors: 4 CPUs
 - Disk Size ~ 125 GB
 
-Need to install git
-
-```sh
-sudo apt-get update
-sudo apt-get install -y git
-```
 ### Install Chrome
 See [How to Install Google Chrome on Ubuntu 22.04]
 
-```sh
+```
 sudo apt install wget
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 ```
-Log into account, it will take a few minutes for [LastPass] extensions to load
+Log into account, it will take a few minutes for [LastPass] extensions to load, access GitHub
 
 ### [Generating a new SSH key]
-```ssh
+```
 # Click Enter on each prompt
 ssh-keygen -t ed25519 -C "your_email@example.com"
 
-# Copy it from the command line The key fingerprint is:
+# Copy it from the command line 'The key fingerprint is:'
+example
+SHA256:yrqxcd1wb+jlkjfUIYFUYCKJVnljbkbd/hgiopauhiu
 ```
 See [Adding a new SSH key to your account]
 
@@ -40,8 +38,12 @@ See [Adding a new SSH key to your account]
 2. In the "Access" section of the sidebar, click  SSH and GPG keys.
 3. Click New SSH key or Add SSH key.
 
-### Clone repo
-```sh
+### Install git & Clone repo
+
+```
+sudo apt-get update
+sudo apt-get install -y git
+
 cd ~
 mkdir dev
 cd dev
