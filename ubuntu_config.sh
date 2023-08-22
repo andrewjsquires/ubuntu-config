@@ -41,8 +41,11 @@ wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
 sudo apt install code
 
-echo install postman
+echo install postman cli
 curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+
+echo install postman app
+snap install postman
 
 echo get ohmyzsh
 sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
