@@ -1,11 +1,19 @@
 #!/bin/bash
 
+echo Enter username
+read username
+
+echo Enter VBox_GAs version - hint cd into /media/$username/ eg. 7.0.10
+read VBox_GAs
+
 echo Clean up Chrome installer
 rm google-chrome-stable_current_amd64.deb
 
+
+echo install standard packages
  sudo apt-get update
 
- declare -a arr=("curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks", "zsh")
+ declare -a arr=("curl" "docker.io" "gnome-shell-extension-prefs" "dconf-editor" "gnome-tweaks" "zsh")
  for name in "${arr[@]}"
  do
     dpkg -s $name &> /dev/null
@@ -20,6 +28,11 @@ rm google-chrome-stable_current_amd64.deb
             echo "$name - already installed"
     fi
  done
+
+echo install nodejs
+cd ~
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install -y nodejs
 
 echo install vscode
 sudo apt update
@@ -38,9 +51,8 @@ echo Change keyboard to uk
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'gb')]"
 
 echo make screen full size
-cd /media/andy/VBox_GAs_7.0.10/
+cd /media/$username/VBox_GAs_$VBox_GAs/
 ./autorun.sh
-
 
 echo install aws cli
  name="aws"
@@ -56,3 +68,5 @@ echo install aws cli
      else
          echo "$name - already installed"
  fi
+
+cd ~
