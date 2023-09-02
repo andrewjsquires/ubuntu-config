@@ -57,9 +57,6 @@ echo make screen full size
 cd /media/$username/VBox_GAs_$VBox_GAs/
 ./autorun.sh
 
-echo disable lock screen
-gsettings set org.gnome.desktop.screensaver lock-enabled false
-
 echo install aws cli
  name="aws"
  dpkg -s $name  &> /dev/null
