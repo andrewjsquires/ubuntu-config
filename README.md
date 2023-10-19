@@ -49,6 +49,9 @@ See [Adding a new SSH key to your account]
 2. In the "Access" section of the sidebar, click  SSH and GPG keys.
 3. Click New SSH key or Add SSH key.
 
+### AWS Code Whisperer
+This needs to be installed manually in VSCode, see [Installing the AWS Toolkit for Visual Studio Code] 
+
 ### Niggles
 Maximising the screen is managed in the script, if this doesn't work see [Ubuntu on Virtualbox screen is too small, can't change resolution]
 
@@ -86,3 +89,5 @@ To set git repo `git remote set-url origin git@github.com:andrewjsquires/ubuntu-
   [Adding the Username to the Sudoers File]: <https://www.baeldung.com/linux/username-not-in-sudoers-file#adding-the-username-to-the-sudoers-file>
 
   [Ubuntu on Virtualbox screen is too small, can't change resolution]: <https://superuser.com/questions/1507127/ubuntu-on-virtualbox-screen-is-too-small-cant-change-resolution>
+
+  [Installing the AWS Toolkit for Visual Studio Code]: <https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/setup-toolkit.html>
